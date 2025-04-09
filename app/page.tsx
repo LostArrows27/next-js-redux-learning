@@ -1,10 +1,15 @@
+"use client";
+
 import type { Metadata } from "next";
-import { Counter } from "./components/counter/Counter";
+import BetterCounter from "./components/better-counter/BetterCounter";
+import BetterCounterProvider from "./provider/BetterCounterProvider";
+// import { Counter } from "./components/counter/Counter";
 
 export default function IndexPage() {
-  return <Counter />;
+  // return <Counter />;
+  return (
+    <BetterCounterProvider>
+      <BetterCounter />
+    </BetterCounterProvider>
+  );
 }
-
-export const metadata: Metadata = {
-  title: "Redux Toolkit",
-};
